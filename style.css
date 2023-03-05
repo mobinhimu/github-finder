@@ -1,0 +1,137 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+img {
+  max-width: 100%;
+}
+.container {
+  max-width: 90%;
+  margin: 0 auto;
+}
+.header {
+  background-color: #fd7e14;
+  color: #ffffff;
+  padding: 15px 0;
+}
+.search-user {
+  margin: 20px 0;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+}
+.search-user h1 {
+  font-size: 2rem;
+  padding-bottom: 10px;
+}
+.search-user p {
+  padding-bottom: 10px;
+  color: rgb(119, 118, 118);
+}
+.input-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+input {
+  border: 1px solid #ddd;
+  padding: 8px;
+  border-radius: 5px;
+  outline-color: #75b798;
+}
+button {
+  border: none;
+  padding: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #198754;
+  color: #ffffff;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 15px;
+}
+.footer {
+  text-align: center;
+  margin: 20px 0;
+}
+p a {
+  font-weight: bold;
+}
+.user-info {
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 5px;
+}
+#search-user-profile {
+  background-color: #087990;
+  padding: 15px;
+  margin-top: 10px;
+}
+.user-info {
+  display: none;
+  flex-direction: column;
+  gap: 20px;
+}
+.user-info-left {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.user-info-right {
+  width: 100%;
+}
+.repo-gist-followers-following {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.repo-gist-followers-following p {
+  width: 100%;
+  background-color: rebeccapurple;
+  padding: 8px 10px;
+  border-radius: 5px;
+  color: #ffffff;
+  text-transform: capitalize;
+}
+.name-company-website-location-memberS {
+  margin-top: 30px;
+}
+.name-company-website-location-memberS p {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+.message {
+  background-color: #dc3545;
+  color: white;
+  margin-top: 15px;
+  padding: 5px;
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+  .repo-gist-followers-following p {
+    width: 40%;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .container {
+    max-width: 920px;
+  }
+  .repo-gist-followers-following p {
+    width: 20%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 1120px;
+  }
+}
