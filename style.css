@@ -41,6 +41,7 @@ input {
   border-radius: 5px;
   outline-color: #75b798;
 }
+#search-user-profile,
 button {
   border: none;
   padding: 8px;
@@ -112,6 +113,18 @@ p a {
   margin-top: 15px;
   padding: 5px;
   display: none;
+}
+details {
+  cursor: pointer;
+}
+ul li {
+  cursor: default;
+  list-style: decimal;
+  margin-left: 30px;
+  margin-top: 10px;
+}
+a:visited {
+  color: #fd7e14;
 }
 @media screen and (min-width: 768px) {
   .container {
