@@ -3,10 +3,10 @@ const input = document.querySelector("input");
 const userInfo = document.querySelector(".user-info");
 const searchUserProfile = document.querySelector("#search-user-profile");
 const message = document.querySelector(".message");
-searchUsername.addEventListener("click", (eve) => {
+searchUsername.addEventListener("click", () => {
   let inputValue = input.value;
   if (inputValue === "") {
-    alert("Please Type GitHub username 😞");
+    userInfo.style.display = "none";
   } else {
     gitHubApi(inputValue);
   }
@@ -36,10 +36,9 @@ function gitHubApi(inputValue) {
 }
 
 function searchingData(data) {
-  console.log(data);
   document.querySelector("img").src = data.avatar_url;
-  searchUserProfile.addEventListener("click", () => {
-    window.open(data.html_url, "_blank");
+  searchUserProfile.addEventListener("click", (eve) => {
+    eve.target.href = data.html_url;
   });
   //   Personal Account Information
   const personalAccountInfo = document.querySelectorAll(
@@ -59,4 +58,25 @@ function searchingData(data) {
   personalInformation[3].innerHTML = "<b>Location : </b>" + data.location;
   personalInformation[4].innerHTML =
     "<b>Member Since  : </b>" + data.created_at;
+  repoList(data.repos_url);
+}
+
+function repoList(url) {
+  fetch(url)
+    .then((response) => {
+      return response.json();
+    })
+    .then((item) => {
+      let text = "";
+      item.forEach((repoItem) => {
+        text += `
+          <li><a href = '${repoItem["html_url"]}' target="_blank">${repoItem["name"]}</a> </li>
+          
+          `;
+      });
+      document.querySelector("ul").innerHTML = text;
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 }
